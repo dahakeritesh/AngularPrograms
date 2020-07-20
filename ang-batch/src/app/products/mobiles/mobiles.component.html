@@ -1,0 +1,107 @@
+<h1>Mobile Products List</h1>
+<p>We have {{ calcProds() }} mobile products in stocks....!</p>
+<p>Sqrt of 144 : {{ 144 | sqrt }}</p>
+
+<div class="section">
+  <!--   Icon Section   -->
+  <div class="row">
+    <!-- Start : row -->
+
+    <ul>
+      <li *ngFor="let mobPart of mobParts">
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="./../../../assets/img/mobile-screen.jpg" />
+              <span class="card-title">Card Title</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red"
+                ><i class="material-icons">add</i></a
+              >
+            </div>
+            <div class="card-content">
+              <p [ngStyle]="{ 'text-shadow': '1px 1px gray' }">
+                Product Id : {{ mobPart.id }}
+              </p>
+              <p [style.color]="mobPart.prodColor" class="bld">
+                Product Name: {{ mobPart.name }}
+              </p>
+              <p *ngIf="mobPart.stock > 0; else stk">
+                <mark>{{ mobPart.stock }} items</mark> are available in stock
+                now
+              </p>
+              <ng-template #stk>
+                <p>Out of Stock!!!</p>
+              </ng-template>
+              <!--ng-container *ngIf = "mobPartstock!=0;then stockVal;else outOfStock"></ng-container>
+                      <ng-templete #stockval > {{mobPart.stock}} in stock</ng-templete>
+                      <ng-templete #outOfStock >Out Of Stock</ng-templete -->
+
+              <div
+                [ngStyle]="{
+                  display: mobPart.isOnline === true ? '' : 'none'
+                }"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Green_sphere.svg/128px-Green_sphere.svg.png"
+                  width="16"
+                />
+              </div>
+              <div
+                [ngStyle]="{
+                  display: mobPart.isOnline === false ? '' : 'none'
+                }"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Sphere_-_monochrome_simple.svg"
+                  width="16"
+                />
+              </div>
+              <span [ngSwitch]="mobPart.country">
+                country:
+                <img
+                  *ngSwitchCase="'Australia'"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flag_of_Australia.svg/1200px-Flag_of_Australia.svg.png"
+                  width="24"
+                />
+                <img
+                  *ngSwitchCase="'India'"
+                  src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png"
+                  width="24"
+                />
+                <img
+                  *ngSwitchCase="'Germany'"
+                  src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png"
+                  width="24"
+                />
+                <img
+                  *ngSwitchDefault=""
+                  src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Flag-map_of_the_world_%282017%29.png"
+                  width="24"
+                />
+              </span>
+              <p>Price : {{ mobPart.price | currency: "INR" }}</p>
+              <p appMyStyle>Discount (5%) : {{ mobPart.price | disc }}</p>
+              <p>
+                Discounted Price : ({{ mobPart.price }} -
+                {{ mobPart.price | disc }})
+              </p>
+              <p>
+                <a
+                  class="waves-effect waves-light btn-small"
+                  (click)="downQuantity(mobPart)"
+                  ><i class="material-icons">remove</i></a
+                >
+                {{ mobPart.quantity }}
+                <a
+                  class="waves-effect waves-light btn-small"
+                  (click)="upQuantity(mobPart)"
+                  ><i class="material-icons">add</i></a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
