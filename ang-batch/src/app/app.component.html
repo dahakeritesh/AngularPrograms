@@ -1,0 +1,66 @@
+<!--div class="container">
+    <h1>First App</h1>
+    <div class="row">
+        <div class='col-lg-3'>
+          <p>Name: {{obj.name}}</p>
+          <p>Age: {{obj.age}}</p>
+          <p>City: {{arr[0]}}</p>
+          <p>City List: {{arr}}</p>
+        </div>
+        <div class='col-lg-9'>
+          <ul>
+            <li *ngFor = "let mobPart of mobParts">
+              <p [ngStyle]="{'text-shadow': '1px 1px gray'}">Product Id : {{mobPart.id}}</p>
+              <p [style.color]="mobPart.prodColor" class="bld">Product Name: {{mobPart.name}}</p>
+              <p *ngIf="mobPart.stock > 0; else stk"><mark>{{mobPart.stock}} items</mark> are available in stock now</p>
+              <ng-template #stk><p>Out of Stock!!!</p></ng-template>
+              <!--ng-container *ngIf = "mobPartstock!=0;then stockVal;else outOfStock"></ng-container>
+              <ng-templete #stockval > {{mobPart.stock}} in stock</ng-templete>
+              <ng-templete #outOfStock >Out Of Stock</ng-templete -->
+              
+              <!--div [ngStyle]="{'display':mobPart.isOnline===true ? '' : 'none'}">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Green_sphere.svg/128px-Green_sphere.svg.png" width=16>
+              </div>
+              <div [ngStyle]="{'display':mobPart.isOnline===false ? '' : 'none'}">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Sphere_-_monochrome_simple.svg" width=16>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+
+      <div class="row">
+        
+      </div>
+      <hr>
+</div-->
+
+ <!-- nav.component.html -->
+ <app-nav></app-nav>
+<!--/ nav.component.html -->
+
+<!-- banner-one.component.html -->
+<app-banner-one></app-banner-one>
+<!--/ banner-one.component.html -->
+
+<!-- products.component.html -->
+<app-products></app-products>
+<!--/ products.component.html -->
+
+<!-- banner-two.component.html -->
+<app-banner-two></app-banner-two>
+<!--/ banner-two.component.html -->
+
+<!-- contact-us.component.html -->
+<app-contact-us></app-contact-us>
+<!--/ contact-us.component.html -->
+
+<!-- banner-three.component.html -->
+<app-banner-three></app-banner-three>
+<!--/ banner-three.component.html -->
+
+<!-- footer.component.html -->
+<app-footer></app-footer>
+<!-- footer.component.html -->
+

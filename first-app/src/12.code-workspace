@@ -1,22 +1,18 @@
 {
-	"folders": [
-		{
-			"name": "ngShubhangi",
-			"path": "D:\\work\\ngShubhangi"
-		},
-		{
-			"name": "AngularPrograms",
-			"path": "D:\\work\\AngularPrograms"
-		},
-		{
-			"path": "C:\\wamp64\\www\\angular\\my-first-app"
-		},
-		{
-			"path": "C:\\wamp64\\www\\lyricsmantra"
-		},
-		{
-			"path": "C:\\wamp64\\www\\lm-admin"
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "name": "AngularPrograms",
+      "path": "D:\\work\\AngularPrograms"
+    },
+    {
+      "path": "C:\\wamp64\\www\\angular\\my-first-app"
+    },
+    {
+      "path": "C:\\wamp64\\www\\lyricsmantra"
+    },
+    {
+      "path": "C:\\wamp64\\www\\lm-admin"
+    }
+  ],
+  "settings": {}
 }
